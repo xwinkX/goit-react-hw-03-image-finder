@@ -2,6 +2,7 @@ import css from 'components/ImageGallery/ImageGallery.module.css';
 import { Loader } from 'components/Loader/Loader';
 import { Component } from 'react';
 import { ImageGalleryItem } from './ImageGalleryItem/ImageGalleryItem';
+import PropTypes from 'prop-types';
 
 export class ImageGallery extends Component {
   state = {
@@ -30,9 +31,16 @@ export class ImageGallery extends Component {
       <ul className={css.gallery}>
         {loading && <Loader />}
         {images && (
-          <ImageGalleryItem images={images} setCurrentImage={this.props.setCurrentImage} />
+          <ImageGalleryItem
+            images={images}
+            setCurrentImage={this.props.setCurrentImage}
+          />
         )}
       </ul>
     );
   }
 }
+
+ImageGallery.propTypes = {
+  setCurrentImage: PropTypes.func,
+};
