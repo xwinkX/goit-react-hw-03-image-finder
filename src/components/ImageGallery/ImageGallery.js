@@ -1,8 +1,8 @@
 import css from 'components/ImageGallery/ImageGallery.module.css';
-import { Loader } from 'components/Loader/Loader';
 import { Component } from 'react';
 import { ImageGalleryItem } from './ImageGalleryItem/ImageGalleryItem';
 import PropTypes from 'prop-types';
+import { Loader } from 'components/Loader/Loader';
 
 export class ImageGallery extends Component {
   state = {
@@ -28,15 +28,17 @@ export class ImageGallery extends Component {
   render() {
     const { images, loading } = this.state;
     return (
-      <ul className={css.gallery}>
+      <>
         {loading && <Loader />}
-        {images && (
-          <ImageGalleryItem
-            images={images}
-            setCurrentImage={this.props.setCurrentImage}
-          />
-        )}
-      </ul>
+        <ul className={css.gallery}>
+          {images && (
+            <ImageGalleryItem
+              images={images}
+              setCurrentImage={this.props.setCurrentImage}
+            />
+          )}
+        </ul>
+      </>
     );
   }
 }

@@ -4,11 +4,13 @@ import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Searchbar } from './Searchbar/Searchbar';
 import { Modal } from './Modal/Modal';
 
+
  export class App extends Component {
    state = {
      imagesName: '',
      image: '',
      page: 1,
+     loading: false,
   }
     
    handleFormSubmit = imagesName => {
@@ -26,7 +28,7 @@ import { Modal } from './Modal/Modal';
      this.setState({ image: url })
    }
    render() {
-     const { imagesName, page, image } = this.state;
+     const { imagesName, page, image} = this.state;
   return (
     <div style={{
       display: 'grid',
@@ -34,8 +36,8 @@ import { Modal } from './Modal/Modal';
       gridGap: '16px',
       paddingBottom: '24px',
     }}>
-      <Searchbar onSubmit={this.handleFormSubmit}/>
-      <ImageGallery imagesName={imagesName} page={page} setCurrentImage={this.setCurrentImage} />
+      <Searchbar onSubmit={this.handleFormSubmit} />
+      <ImageGallery imagesName={imagesName} page={page} setCurrentImage={this.setCurrentImage} loading={this.state.loadingGal} />
       {imagesName && <Button loadMore={this.onLoadMore } />}
         {image && <Modal img={image} onClose={this.closeModal} />}
     </div>

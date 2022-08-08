@@ -14,7 +14,7 @@ export const ImageGalleryItem = ({ images, setCurrentImage }) =>
   ));
 
 ImageGalleryItem.propTypes = {
-  images: PropTypes.objectOf(PropTypes.string),
+  images: PropTypes.array,
   id: PropTypes.string,
   webformatURL: PropTypes.string,
   largeImageURL: PropTypes.string,
