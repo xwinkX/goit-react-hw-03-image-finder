@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/react-homework-template/static/css/main.e950dc66.css",
-    "main.js": "/react-homework-template/static/js/main.65fb215f.js",
-    "static/media/free-icon-close-1828665.png": "/react-homework-template/static/media/free-icon-close-1828665.ffdafe3f0eceab67b7c2.png",
-    "index.html": "/react-homework-template/index.html",
-    "main.e950dc66.css.map": "/react-homework-template/static/css/main.e950dc66.css.map",
-    "main.65fb215f.js.map": "/react-homework-template/static/js/main.65fb215f.js.map"
+    "main.css": "//xwinkX.github.io/goit-react-hw-03-image-finder/static/css/main.28a1af92.css",
+    "main.js": "//xwinkX.github.io/goit-react-hw-03-image-finder/static/js/main.e797ab93.js",
+    "static/media/free-icon-close-1828665.png": "//xwinkX.github.io/goit-react-hw-03-image-finder/static/media/free-icon-close-1828665.ffdafe3f0eceab67b7c2.png",
+    "index.html": "//xwinkX.github.io/goit-react-hw-03-image-finder/index.html",
+    "main.28a1af92.css.map": "//xwinkX.github.io/goit-react-hw-03-image-finder/static/css/main.28a1af92.css.map",
+    "main.e797ab93.js.map": "//xwinkX.github.io/goit-react-hw-03-image-finder/static/js/main.e797ab93.js.map"
   },
   "entrypoints": [
-    "static/css/main.e950dc66.css",
-    "static/js/main.65fb215f.js"
+    "static/css/main.28a1af92.css",
+    "static/js/main.e797ab93.js"
   ]
 }
