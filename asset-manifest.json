@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "//xwinkX.github.io/goit-react-hw-03-image-finder/static/css/main.28a1af92.css",
+    "main.css": "//xwinkX.github.io/goit-react-hw-03-image-finder/static/css/main.c00d45c1.css",
     "main.js": "//xwinkX.github.io/goit-react-hw-03-image-finder/static/js/main.e797ab93.js",
     "static/media/free-icon-close-1828665.png": "//xwinkX.github.io/goit-react-hw-03-image-finder/static/media/free-icon-close-1828665.ffdafe3f0eceab67b7c2.png",
     "index.html": "//xwinkX.github.io/goit-react-hw-03-image-finder/index.html",
-    "main.28a1af92.css.map": "//xwinkX.github.io/goit-react-hw-03-image-finder/static/css/main.28a1af92.css.map",
+    "main.c00d45c1.css.map": "//xwinkX.github.io/goit-react-hw-03-image-finder/static/css/main.c00d45c1.css.map",
     "main.e797ab93.js.map": "//xwinkX.github.io/goit-react-hw-03-image-finder/static/js/main.e797ab93.js.map"
   },
   "entrypoints": [
-    "static/css/main.28a1af92.css",
+    "static/css/main.c00d45c1.css",
     "static/js/main.e797ab93.js"
   ]
 }
