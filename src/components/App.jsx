@@ -21,9 +21,8 @@ export class App extends Component {
        this.setState({ imagesName });
   }
 
-  onLoadMore = (event) => {
-    event.preventDefault();
-     this.setState(prevState => ({ page: prevState.page + 1 }));
+  onLoadMore = () => {
+    this.setState(prevState => ({ page: prevState.page + 1 }));
    } 
    
    closeModal = () => {

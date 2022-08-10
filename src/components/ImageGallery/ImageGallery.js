@@ -8,8 +8,9 @@ export class ImageGallery extends Component {
   state = {
     images: [],
     loading: false,
+    page: 1,
   };
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     const apiKey = '28142937-a3dfb3cd180998f959efa9eff';
     const baseUrl = 'https://pixabay.com/api/';
     const imagesName = this.props.imagesName;
@@ -21,11 +22,18 @@ export class ImageGallery extends Component {
       )
         .then(res => res.json())
         // .then(images => this.setState({ images: images.hits }))
+
         .then(images =>
           this.setState(prevState => ({
             images: [...prevState.images, ...images.hits],
           }))
         )
+
+        // .then(images =>
+        //   this.setState(prevState => ({
+        //     images: [...prevState.images, ...images.hits],
+        //   }))
+        // )
         .finally(() => this.setState({ loading: false }));
     }
   }
