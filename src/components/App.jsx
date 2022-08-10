@@ -21,7 +21,8 @@ export class App extends Component {
        this.setState({ imagesName });
   }
 
-   onLoadMore = () => {
+  onLoadMore = (event) => {
+    event.preventDefault();
      this.setState(prevState => ({ page: prevState.page + 1 }));
    } 
    
