@@ -4,6 +4,7 @@ import { Component } from 'react';
 export class Searchbar extends Component {
   state = {
     imagesName: '',
+    render: true,
   };
 
   handleNameChange = event => {
@@ -22,7 +23,13 @@ export class Searchbar extends Component {
     return (
       <header className={css.searchbar}>
         <form onSubmit={this.handleSubmit} className={css.form}>
-          <button type="submit" className={css.button}>
+          <button
+            onClick={() => {
+              this.props.updateRender(this.state.render);
+            }}
+            type="submit"
+            className={css.button}
+          >
             <span className={css.buttonlabel}>Search</span>
           </button>
 

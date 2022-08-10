@@ -5,17 +5,21 @@ import { Searchbar } from './Searchbar/Searchbar';
 import { Modal } from './Modal/Modal';
 
 
- export class App extends Component {
-   state = {
-     imagesName: '',
-     image: '',
-     page: 1,
-     loading: false,
+export class App extends Component {
+  state = {
+    imagesName: '',
+    page: 1,
+    render: '',
+     
   }
+  updateRender = (value) => {
+    this.setState({ render: value })
+  }
+ 
     
    handleFormSubmit = imagesName => {
-     this.setState({ imagesName });
-   }
+       this.setState({ imagesName });
+  }
 
    onLoadMore = () => {
      this.setState(prevState => ({ page: prevState.page + 1 }));
@@ -28,7 +32,7 @@ import { Modal } from './Modal/Modal';
      this.setState({ image: url })
    }
    render() {
-     const { imagesName, page, image} = this.state;
+     const { imagesName, page, image, render} = this.state;
   return (
     <div style={{
       display: 'grid',
@@ -36,8 +40,8 @@ import { Modal } from './Modal/Modal';
       gridGap: '16px',
       paddingBottom: '24px',
     }}>
-      <Searchbar onSubmit={this.handleFormSubmit} />
-      <ImageGallery imagesName={imagesName} page={page} setCurrentImage={this.setCurrentImage} loading={this.state.loading} />
+      <Searchbar onSubmit={this.handleFormSubmit} updateRender={this.updateRender} />
+      {render && <ImageGallery imagesName={imagesName} page={page} setCurrentImage={this.setCurrentImage} />}
       {imagesName && <Button loadMore={this.onLoadMore } />}
         {image && <Modal img={image} onClose={this.closeModal} />}
     </div>
