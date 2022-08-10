@@ -37,7 +37,7 @@ import { Modal } from './Modal/Modal';
       paddingBottom: '24px',
     }}>
       <Searchbar onSubmit={this.handleFormSubmit} />
-      <ImageGallery imagesName={imagesName} page={page} setCurrentImage={this.setCurrentImage} loading={this.state.loadingGal} />
+      <ImageGallery imagesName={imagesName} page={page} setCurrentImage={this.setCurrentImage} loading={this.state.loading} />
       {imagesName && <Button loadMore={this.onLoadMore } />}
         {image && <Modal img={image} onClose={this.closeModal} />}
     </div>
