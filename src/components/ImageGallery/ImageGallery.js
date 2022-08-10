@@ -6,7 +6,7 @@ import { Loader } from 'components/Loader/Loader';
 
 export class ImageGallery extends Component {
   state = {
-    images: null,
+    images: [],
     loading: false,
   };
   componentDidUpdate(prevProps) {
@@ -20,7 +20,12 @@ export class ImageGallery extends Component {
         `${baseUrl}?q=${imagesName}&page=${page}&key=${apiKey}&image_type=photo&orientation=horizontal&per_page=12`
       )
         .then(res => res.json())
-        .then(images => this.setState({ images: images.hits }))
+        // .then(images => this.setState({ images: images.hits }))
+        .then(images =>
+          this.setState(prevState => ({
+            images: [...prevState.images, ...images.hits],
+          }))
+        )
         .finally(() => this.setState({ loading: false }));
     }
   }
