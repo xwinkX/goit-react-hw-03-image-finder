@@ -10,7 +10,7 @@ export class ImageGallery extends Component {
     loading: false,
     page: 1,
   };
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     const apiKey = '28142937-a3dfb3cd180998f959efa9eff';
     const baseUrl = 'https://pixabay.com/api/';
     const imagesName = this.props.imagesName;
@@ -21,11 +21,14 @@ export class ImageGallery extends Component {
         `${baseUrl}?q=${imagesName}&page=${page}&key=${apiKey}&image_type=photo&orientation=horizontal&per_page=12`
       )
         .then(res => res.json())
-        // .then(images => this.setState({ images: images.hits }))
-
         .then(images =>
           this.setState(prevState => ({
-            images: [...prevState.images, ...images.hits],
+            images: [
+              ...prevState.images,
+              ...images.hits.map(({ id, webformatURL, largeImageURL }) => {
+                return { id, webformatURL, largeImageURL };
+              }),
+            ],
           }))
         )
 
