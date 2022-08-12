@@ -18,6 +18,5 @@ ImageGalleryItem.propTypes = {
   id: PropTypes.string,
   webformatURL: PropTypes.string,
   largeImageURL: PropTypes.string,
-
   setCurrentImage: PropTypes.func,
 };

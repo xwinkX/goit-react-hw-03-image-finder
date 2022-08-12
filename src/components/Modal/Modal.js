@@ -3,6 +3,11 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export class Modal extends Component {
+  static propTypes = {
+    srs: PropTypes.string,
+    onClick: PropTypes.func,
+  };
+
   handelClickEscape = event => {
     if (event.code === 'Escape') {
       this.props.onClose();
@@ -32,8 +37,3 @@ export class Modal extends Component {
     );
   }
 }
-
-Modal.propTypes = {
-  srs: PropTypes.string,
-  onClick: PropTypes.func,
-};
