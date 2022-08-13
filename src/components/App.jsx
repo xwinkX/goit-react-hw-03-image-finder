@@ -4,22 +4,19 @@ import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Searchbar } from './Searchbar/Searchbar';
 import { Modal } from './Modal/Modal';
 import { Loader } from './Loader/Loader';
+import { apiImg } from '../api/apiImg'; 
 
 
 export class App extends Component {
   state = {
     imagesName: '',
     page: 1,
-    // render: '',
     images: [],
     loading: false,
-    // isShow: false,
     image: '',
     
   }
   componentDidUpdate(prevProps, prevState) {
-    const apiKey = '28142937-a3dfb3cd180998f959efa9eff';
-    const baseUrl = 'https://pixabay.com/api/';
     const imagesName = this.state.imagesName;
     const page = this.state.page;
     if (this.state.imagesName.trim() === '') {
@@ -27,10 +24,7 @@ export class App extends Component {
     }
     if (prevState.imagesName !== imagesName || prevState.page !== page) {
       this.setState({ loading: true });
-      fetch(
-        `${baseUrl}?q=${imagesName}&page=${page}&key=${apiKey}&image_type=photo&orientation=horizontal&per_page=12`
-      )
-        .then(res => res.json())
+      apiImg(imagesName, page)
         .then(images =>
           this.setState(prevState => ({
             images: [
@@ -45,7 +39,6 @@ export class App extends Component {
     }
   }
   handleSubmit = event => {
-    console.log(event.target.name.value)
     event.preventDefault();
     this.setState({
       imagesName: event.target.name.value,

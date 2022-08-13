@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 export class Modal extends Component {
   static propTypes = {
-    srs: PropTypes.string,
-    onClick: PropTypes.func,
+    img: PropTypes.string.isRequired,
+    onClose: PropTypes.func.isRequired,
   };
 
   handelClickEscape = event => {
